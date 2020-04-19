@@ -11,13 +11,12 @@ while Level != "Beginner" and Level != "Advanced" and Level != "Intermediate":
 
 if Level == "Beginner":
     attempts = 12
-    print('You have ' + str(attempts) + ' attempts')
 elif Level == "Intermediate":
     attempts = 9
-    print('You have ' + str(attempts) + ' attempts')
 elif Level == "Advanced":
     attempts = 6
-    print('You have ' + str(attempts) + ' attempts')
+
+print('You have ' + str(attempts) + ' attempts')
 
 for i in range(0,attempts):
     playernumber = int(input('Enter the number: ' if i==0 else "Enter the number again: "))
