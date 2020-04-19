@@ -1,19 +1,45 @@
 import random
-#print(random.randint(1, 20))
+number = random.randint(1, 50)
+#Level = input('Choose your level: beginner/intermediate/advanced: ').strip().capitalize()
+# if Level == "Beginner":
+#     attempts = 12
+#     print('You have ' + str(attempts) + ' attempts')
+# elif Level == "Intermediate":
+#     attempts = 9
+#     print('You have ' + str(attempts) + ' attempts')
+# elif Level == "Advanced":
+#     attempts = 6
+#     print('You have ' + str(attempts) + ' attempts')
 
-number = random.randint(1, 10)
-print('You have 5 attempts')
-playernumber = int(input('Enter the number: '))
+# while Level != "Beginner" and Level != "Advanced" and Level != "Intermediate":
+#     print('You should make ur choice. Enter valid option. If you don"t want to play, press Q')
+#     Level = input('Choose your level: beginner/intermediate/advanced: ').strip().capitalize()
+#     if Level == "Q":
+#             print("Bye!")
+#             quit()
 
-i = 1
-for i in 5:
+attempts = 0
+while not attempts:
+    print('You should make ur choice. Enter valid option. If you don"t want to play, press Q')
+    Level = input('Choose your level: beginner/intermediate/advanced: ').strip().capitalize()
+    attempts = 12 if Level == "Beginner" else (9 if Level == "Intermediate" else (6 if Level == "Advanced" else 0))
+    if Level == "Q":
+        quit()
+
+
+#attempts = 12 if Level == "Beginner" else (9 if Level == "Intermediate" else 6)
+
+print('You have ' + str(attempts) + ' attempts')
+
+for i in range(0,attempts):
+    playernumber = int(input('Enter the number: ' if i==0 else "Enter the number again: "))
 
     if playernumber == number:
         print("Win!!!")
-    else:
-        print("Lose")
-        playernumber = int(input('Enter the number again: '))
+        exit()
+    elif (playernumber > number) & (i != attempts - 1):
+        print('Decrease your number')
+    elif (playernumber < number) & (i != attempts - 1):
+        print('Increase your number')
 
-print("Correct number was " + str(number))
-
-hdjshfjkds
+print("You lose. Correct number was " + str(number))
