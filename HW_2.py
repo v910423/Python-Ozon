@@ -1,35 +1,23 @@
 import random
 number = random.randint(1, 50)
-#Level = input('Choose your level: beginner/intermediate/advanced: ').strip().capitalize()
-# if Level == "Beginner":
-#     attempts = 12
-#     print('You have ' + str(attempts) + ' attempts')
-# elif Level == "Intermediate":
-#     attempts = 9
-#     print('You have ' + str(attempts) + ' attempts')
-# elif Level == "Advanced":
-#     attempts = 6
-#     print('You have ' + str(attempts) + ' attempts')
+Level = input('Choose your level: beginner/intermediate/advanced: ').strip().capitalize()
 
-# while Level != "Beginner" and Level != "Advanced" and Level != "Intermediate":
-#     print('You should make ur choice. Enter valid option. If you don"t want to play, press Q')
-#     Level = input('Choose your level: beginner/intermediate/advanced: ').strip().capitalize()
-#     if Level == "Q":
-#             print("Bye!")
-#             quit()
-
-attempts = 0
-while not attempts:
+while Level != "Beginner" and Level != "Advanced" and Level != "Intermediate":
     print('You should make ur choice. Enter valid option. If you don"t want to play, press Q')
     Level = input('Choose your level: beginner/intermediate/advanced: ').strip().capitalize()
-    attempts = 12 if Level == "Beginner" else (9 if Level == "Intermediate" else (6 if Level == "Advanced" else 0))
     if Level == "Q":
-        quit()
+            print("Bye!")
+            quit()
 
-
-#attempts = 12 if Level == "Beginner" else (9 if Level == "Intermediate" else 6)
-
-print('You have ' + str(attempts) + ' attempts')
+if Level == "Beginner":
+    attempts = 12
+    print('You have ' + str(attempts) + ' attempts')
+elif Level == "Intermediate":
+    attempts = 9
+    print('You have ' + str(attempts) + ' attempts')
+elif Level == "Advanced":
+    attempts = 6
+    print('You have ' + str(attempts) + ' attempts')
 
 for i in range(0,attempts):
     playernumber = int(input('Enter the number: ' if i==0 else "Enter the number again: "))
