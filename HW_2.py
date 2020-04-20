@@ -18,15 +18,31 @@ elif Level == "Advanced":
 
 print('You have ' + str(attempts) + ' attempts')
 
-for i in range(0,attempts):
-    playernumber = int(input('Enter the number: ' if i==0 else "Enter the number again: "))
+h = []
 
-    if playernumber == number:
+while attempts:
+#for i in range(0,attempts):
+    if len(h) != 0:
+        print('You have ' + str(attempts) + " attempts left. You entered " + str(h))
+    playernumber = float(input(('Enter the number: ' if len(h) != 0 else "Enter the number again: ")))
+
+    if int(playernumber) == number:
         print("Win!!!")
         exit()
-    elif (playernumber > number) & (i != attempts - 1):
+    elif playernumber in h:
+        print ('You already entered this number.')
+        #h.remove(playernumber)
+        #attempts = attempts + 1
+        continue
+    elif (int(playernumber) > number) & (attempts != 1):
         print('Decrease your number')
-    elif (playernumber < number) & (i != attempts - 1):
+    elif (int(playernumber) < number) & (attempts != 1):
         print('Increase your number')
+    h.append(int(playernumber))
+
+    attempts -= 1
+
+print('You entered ' + str(h))
+
 
 print("You lose. Correct number was " + str(number))
