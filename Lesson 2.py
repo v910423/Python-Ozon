@@ -12,9 +12,9 @@
 # print(*numbers)
 
 # таблица умножения крутой способ
-# numbers = [[value * i for value in range(1,11)] for i in range(1,11)]
-# for elem in numbers:
-#     print(*elem)
+numbers = [[value * i for value in range(1,11)] for i in range(1,11)]
+for elem in numbers:
+    print(*elem)
 
 #Сортировка с реверсом
 # number = int(input('Enter the number: '))
@@ -30,17 +30,16 @@
 # #print(spisok)
 # #print(sorted_spisok)
 
-import random
-
-#num = int(input('quantity of bullets? '))
-bullets = [0 for i in range(6)]
-bullets[0] = 1
-print(bullets)
-a = int(input('Do u want to play? Y = 1, N = 0 '))
-while a == 1:
-    if random.choice(bullets) == 0:
-        print('Lose. Again?')
-    else:
-        print('Win.Again?')
-    a = int(input('Y = 1, N = 0 '))
-print('Great game.')
+# import random
+#
+# bullets = [0 for i in range(6)]
+# bullets[0] = 1
+# print(bullets)
+# a = int(input('Do u want to play? Y = 1, N = 0 '))
+# while a == 1:
+#     if random.choice(bullets) == 0:
+#         print('Lose. Again?')
+#     else:
+#         print('Win.Again?')
+#     a = int(input('Y = 1, N = 0 '))
+# print('Great game.')
