@@ -25,6 +25,7 @@ while flag:
     errors = 0
 
 
+
     for key, value in dictionary.items():
         translation = input('Enter translation ' + key + ": ").lower()
         if translation == value:
