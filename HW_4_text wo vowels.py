@@ -1,3 +1,5 @@
+#Простой вариант с внешней переменной translatedText вне функции:
+
 # def translate(text):
 #     vowels = ["у", "е", "ы", "а", "о", "э", "я", "и", "ю", 'e', 'y', 'u', 'i', 'o', 'a']
 #     newText = []
@@ -10,6 +12,8 @@
 # translatedText = translate(text)
 # print(translatedText)
 
+
+#Вариант с глобальной переменной translatedText
 def translate(text):
     vowels = ["у", "е", "ы", "а", "о", "э", "я", "и", "ю", 'e', 'y', 'u', 'i', 'o', 'a']
     global translatedText
