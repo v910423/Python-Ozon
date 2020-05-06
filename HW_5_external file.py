@@ -1,10 +1,9 @@
 source = "/Users/valeriabelko/Desktop/Python/HW 5.txt"
 with open(source) as file:
     text = file.read().split('\n')
-    try:
-        spisok = [int(item) for item in text]
-    except:
-        continue
+
+    spisok = [int(item) for item in text]
+
 
     summa = "Сумма чисел равна " + str(sum(spisok))
     avrg = "Среднее значение равно " + str(sum(spisok)/len(spisok))
