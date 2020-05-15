@@ -20,7 +20,7 @@ while answer == "Y":
             email = input('Введенный адрес электронной почты не соответсвует формату. Повторите ввод почты: ')
 
         if email in spisok:
-            print('Этот адрес электронной почты уже занят для логина.')
+            print('Этот адрес электронной почты уже занят.')
         else:
             spisok[email] = login
             print('User is added.')
@@ -29,4 +29,5 @@ while answer == "Y":
 print(spisok)
 
 with open("HW_7.txt", 'w') as file:
-    file.write(str(spisok))
+    for key in spisok:
+        file.write(f'{key} : {spisok[key]}\n')
